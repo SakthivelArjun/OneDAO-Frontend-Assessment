@@ -1,0 +1,21 @@
+.otp-box {
+  aspect-ratio: 1 / 1;
+  max-width: 54px;
+  min-width: 0;
+  border-radius: 10px;
+  background-color: #fafafa;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.otp-box:focus {
+  background-color: #ffffff;
+  border-color: #0b0c0f;
+  box-shadow: 0 0 0 3px rgba(18, 18, 18, 0.08);
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .otp-box {
+    border-radius: 8px;
+  }
+}

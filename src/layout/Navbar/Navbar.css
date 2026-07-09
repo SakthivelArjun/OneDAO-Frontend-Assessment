@@ -1,0 +1,88 @@
+/* Navbar / Dashboard Header styling */
+.dashboard-header {
+  background-color: #ffffff;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: none;
+}
+
+.header-greeting-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.header-greeting {
+  font-size: 20px;
+  font-weight: 400;
+  color: #0b0c0f;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.greeting-subtext {
+  font-size: 13px;
+  font-weight: 200;
+  color: #8b92a5;
+  margin-top: 1px;
+}
+
+.highlight-text {
+  color: #5c67f2;
+  font-weight: 600;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-action-btn {
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  color: #0b0c0f;
+  font-size: 16px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.header-action-btn:hover {
+  background-color: #0b0c0f;
+  color: #ffffff;
+  border-color: #0b0c0f;
+}
+
+.italic-letter {
+  font-style: italic;
+}
+
+/* Align header content on desktop */
+@media (min-width: 992px) {
+  .dashboard-header {
+    margin-top: 0;
+    height: 80px;
+    padding: 0 28px;
+  }
+}
+
+/* Adjust header for small mobile viewports */
+@media (max-width: 575px) {
+  .header-greeting {
+    font-size: 14px !important;
+  }
+
+  .greeting-subtext {
+    font-size: 11px;
+  }
+}

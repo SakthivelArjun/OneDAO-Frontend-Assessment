@@ -1,0 +1,102 @@
+/* Structural Dashboard Layout styles */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0b0c0f;
+  padding: 12px;
+}
+
+.sidebar-mobile-wrapper {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .sidebar-mobile-wrapper {
+    display: flex !important;
+    height: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  /* Always keep the wrapper in place so the slide transition works */
+  .sidebar-mobile-wrapper {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: 999;
+    pointer-events: none;
+  }
+
+  .sidebar-mobile-wrapper.sidebar-open {
+    pointer-events: auto;
+  }
+}
+
+.dashboard-content-wrapper {
+  background-color: #ffffff;
+  border-radius: 28px;
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.dashboard-body {
+  padding: 28px;
+  flex-grow: 1;
+  background-color: #ffffff;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Responsive container overrides for mobile screen sizes */
+@media (max-width: 991px) {
+  .dashboard-container {
+    flex-direction: column;
+    padding: 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  .dashboard-content-wrapper {
+    border-radius: 0;
+    box-shadow: none;
+    height: auto;
+    overflow: visible;
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  .dashboard-body {
+    padding: 16px;
+    overflow-y: visible;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

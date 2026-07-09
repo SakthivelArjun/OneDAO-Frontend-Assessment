@@ -1,0 +1,14 @@
+[
+  { "month": "Jan", "averageGrade": 35, "exams": 51 },
+  { "month": "Feb", "averageGrade": 58, "exams": 44 },
+  { "month": "Mar", "averageGrade": 63, "exams": 44 },
+  { "month": "Apr", "averageGrade": 50, "exams": 54 },
+  { "month": "May", "averageGrade": 32, "exams": 70 },
+  { "month": "Jun", "averageGrade": 24, "exams": 82 },
+  { "month": "Jul", "averageGrade": 35, "exams": 87 },
+  { "month": "Aug", "averageGrade": 71, "exams": 60 },
+  { "month": "Sep", "averageGrade": 95, "exams": 58 },
+  { "month": "Oct", "averageGrade": 99, "exams": 49 },
+  { "month": "Nov", "averageGrade": 68, "exams": 57 },
+  { "month": "Dec", "averageGrade": 52, "exams": 81 }
+]

@@ -1,0 +1,149 @@
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.ui-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Width options */
+.ui-btn-full-width {
+  width: 100%;
+}
+
+/* Size options */
+.ui-btn-sm {
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.ui-btn-md {
+  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+
+.ui-btn-lg {
+  font-size: 16px;
+  padding: 14px 28px;
+  border-radius: 12px;
+}
+
+/* Variant options */
+.ui-btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.ui-btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.ui-btn-secondary {
+  background-color: transparent;
+  color: var(--text-dark);
+  border-color: var(--border-color);
+}
+
+.ui-btn-secondary:hover:not(:disabled) {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.ui-btn-dark {
+  background-color: var(--dark-btn);
+  color: #ffffff;
+}
+
+.ui-btn-dark:hover:not(:disabled) {
+  background-color: var(--dark-btn-hover);
+}
+
+.ui-btn-light {
+  background-color: #f1f5f9;
+  color: var(--text-main);
+  border-color: transparent;
+}
+
+.ui-btn-light:hover:not(:disabled) {
+  background-color: #e2e8f0;
+  color: var(--text-dark);
+}
+
+.ui-btn-danger {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.ui-btn-danger:hover:not(:disabled) {
+  background-color: #dc2626;
+}
+
+.ui-btn-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--primary-color);
+  font-weight: 500;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.ui-btn-link:hover:not(:disabled) {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Loading state and spinner */
+.ui-btn-loading {
+  position: relative;
+  color: transparent !important;
+}
+
+.ui-btn-loading .ui-btn-text,
+.ui-btn-loading .ui-btn-icon {
+  visibility: hidden;
+}
+
+.ui-btn-spinner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: ui-btn-spin 0.6s linear infinite;
+}
+
+.ui-btn-icon-left {
+  margin-right: 8px;
+}
+
+.ui-btn-icon-right {
+  margin-left: 8px;
+}
+
+.ui-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes ui-btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
