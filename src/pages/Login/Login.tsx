@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { AuthLayout } from '@/layout';
-import { Button, Input, Alert, Toast } from '@/components/ui';
+import { Button, Input, Toast } from '@/components/ui';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
   const [successMessage, setSuccessMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -21,20 +21,30 @@ const Login: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
+    const newErrors: { email?: string; password?: string } = {};
     setSuccessMessage('');
 
-    if (!email || !password) {
-      setError('Please fill in all fields.');
+    if (!email) {
+      newErrors.email = 'Email ID is required.';
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        newErrors.email = 'Please enter a valid email address.';
+      }
+    }
+
+    if (!password) {
+      newErrors.password = 'Password is required.';
+    } else if (password.length < 6) {
+      newErrors.password = 'Password must be at least 6 characters.';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address.');
-      return;
-    }
-
+    setErrors({});
     setLoading(true);
     setTimeout(() => {
       localStorage.setItem('user_session', JSON.stringify({ email }));
@@ -57,20 +67,20 @@ const Login: React.FC = () => {
         <h2 className="auth-title">Log In to Admin Panel</h2>
         <p className="auth-subtitle">Enter your email id and password below</p>
 
-        {error && (
-          <Alert variant="danger" className="py-2 px-3 mb-3 small">
-            {error}
-          </Alert>
-        )}
-
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} noValidate>
           <Input
             type="email"
             id="email"
             label="Email ID"
             placeholder="Enter your email id"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            error={errors.email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              if (errors.email) {
+                setErrors((prev) => ({ ...prev, email: undefined }));
+              }
+            }}
             required
           />
 
@@ -80,7 +90,13 @@ const Login: React.FC = () => {
             label="Password"
             placeholder="Enter your password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            error={errors.password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              if (errors.password) {
+                setErrors((prev) => ({ ...prev, password: undefined }));
+              }
+            }}
             required
             containerClassName="mb-4"
           />
