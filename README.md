@@ -2,6 +2,8 @@
 
 A professional, minimal admin dashboard application built using React, TypeScript, and Vite. The application includes responsive layouts, analytics charts, and tabular view modules.
 
+Live Demo: [onedao-assessment.netlify.app](https://onedao-assessment.netlify.app/login)
+
 ## Features
 
 - Interactive Dashboard: Statistics visualization, driver records, and rides logs.
