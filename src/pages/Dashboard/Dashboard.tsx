@@ -11,12 +11,12 @@ const Dashboard: React.FC = () => {
 
   return (
     <div>
-      <div className="row g-4 mb-4 align-items-stretch">
+      <div className="row g-3 mb-4 align-items-stretch">
         <div className="col-12 col-xl-8 d-flex flex-column">
           {/* Knowledge Base */}
           <h4 className="fs-5 fw-bold text-dark mb-3">Knowledge base</h4>
           <div className="row g-3 mb-4">
-            <div className="col-12 col-sm-6 col-xl-3 animate-fade-in-up" style={{ animationDelay: "50ms" }}>
+            <div className="col-12 col-md-6 col-xxl-3 animate-fade-in-up" style={{ animationDelay: "50ms" }}>
               <div className="kb-card kb-card-blue d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center gap-3">
                   <div className="kb-icon-container d-flex align-items-center justify-content-center">
@@ -28,7 +28,7 @@ const Dashboard: React.FC = () => {
               </div>
             </div>
 
-            <div className="col-12 col-sm-6 col-xl-3 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+            <div className="col-12 col-md-6 col-xxl-3 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
               <div className="kb-card kb-card-red d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center gap-3">
                   <div className="kb-icon-container d-flex align-items-center justify-content-center">
@@ -40,7 +40,7 @@ const Dashboard: React.FC = () => {
               </div>
             </div>
 
-            <div className="col-12 col-sm-6 col-xl-3 animate-fade-in-up" style={{ animationDelay: "150ms" }}>
+            <div className="col-12 col-md-6 col-xxl-3 animate-fade-in-up" style={{ animationDelay: "150ms" }}>
               <div className="kb-card kb-card-orange d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center gap-3">
                   <div className="kb-icon-container d-flex align-items-center justify-content-center">
@@ -52,7 +52,7 @@ const Dashboard: React.FC = () => {
               </div>
             </div>
 
-            <div className="col-12 col-sm-6 col-xl-3 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+            <div className="col-12 col-md-6 col-xxl-3 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
               <div className="kb-card kb-card-green d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center gap-3">
                   <div className="kb-icon-container d-flex align-items-center justify-content-center">

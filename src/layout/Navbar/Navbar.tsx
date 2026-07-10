@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar }) => {
         {onToggleSidebar && (
           <button
             onClick={onToggleSidebar}
-            className="btn btn-link p-0 me-3 text-dark"
+            className="btn btn-link p-0 me-3 text-dark d-lg-none"
             aria-label="Toggle Sidebar"
           >
             <FontAwesomeIcon icon={faBars} size="lg" />

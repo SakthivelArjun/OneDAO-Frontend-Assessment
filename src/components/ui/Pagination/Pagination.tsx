@@ -57,7 +57,9 @@ export const Pagination: React.FC<PaginationProps> = ({
 
         <button
           className={`btn-pagination ${currentPage === totalPages ? "disabled" : ""}`}
-          onClick={() => currentPage < totalPages && onPageChange(currentPage + 1)}
+          onClick={() =>
+            currentPage < totalPages && onPageChange(currentPage + 1)
+          }
           disabled={currentPage === totalPages}
         >
           <FontAwesomeIcon icon={faChevronRight} />

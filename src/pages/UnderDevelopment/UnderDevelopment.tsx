@@ -7,7 +7,8 @@ export const UnderDevelopment: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const pageName = location.pathname.substring(1);
-  const formattedPageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
+  const formattedPageName =
+    pageName.charAt(0).toUpperCase() + pageName.slice(1);
 
   return (
     <div className="text-center py-5 bg-white rounded-4 shadow-sm">

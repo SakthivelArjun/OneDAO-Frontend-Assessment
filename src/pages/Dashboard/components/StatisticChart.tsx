@@ -200,8 +200,8 @@ export const StatisticChart: React.FC = () => {
       </div>
 
       <div
-        className="w-100 flex-grow-1 d-flex align-items-center"
-        style={{ position: "relative" }}
+        className="w-100 flex-grow-1"
+        style={{ position: "relative", minHeight: "220px", overflow: "hidden" }}
       >
         {loading && (
           <div className="d-flex justify-content-center align-items-center w-100 h-100 py-5">
@@ -224,11 +224,7 @@ export const StatisticChart: React.FC = () => {
           !error &&
           Array.isArray(chartData) &&
           chartData.length > 0 && (
-            <LineChart
-              chartRef={chartRef}
-              data={data}
-              onClick={onChartClick}
-            />
+            <LineChart chartRef={chartRef} data={data} onClick={onChartClick} />
           )}
       </div>
     </div>
